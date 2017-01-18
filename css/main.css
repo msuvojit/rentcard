@@ -2,8 +2,32 @@
 @import url(../libs/animate/animate.css);
 @import url(../libs/bxSlider/jquery.bxslider.css);
 @import url(../libs/magnific/magnific-popup.css);
+@font-face {
+  font-family: "OrkneyBold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OrkneyBold/OrkneyBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OrkneyBold/OrkneyBold.woff") format("woff"), url("../fonts/OrkneyBold/OrkneyBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "OrkneyLight";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OrkneyLight/OrkneyLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OrkneyLight/OrkneyLight.woff") format("woff"), url("../fonts/OrkneyLight/OrkneyLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "OrkneyMedium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OrkneyMedium/OrkneyMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/OrkneyMedium/OrkneyMedium.woff") format("woff"), url("../fonts/OrkneyMedium/OrkneyMedium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "OrkneyRegular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OrkneyRegular/OrkneyRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/OrkneyRegular/OrkneyRegular.woff") format("woff"), url("../fonts/OrkneyRegular/OrkneyRegular.ttf") format("truetype");
+}
 html.js .loader {
-  background: none repeat scroll 0 0 #ffffff;
+  background: none repeat scroll 0 0 #E3ECFD;
   bottom: 0;
   height: 100%;
   left: 0;
@@ -18,18 +42,18 @@ html.js .loader .loader_inner {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #fff;
-  height: 60px;
-  width: 60px;
-  margin-top: -30px;
-  margin-left: -30px;
+  background-color: #E3ECFD;
+  height: 400px;
+  width: 300px;
+  margin-top: -200px;
+  margin-left: -150px;
   left: 50%;
   top: 50%;
   position: absolute;
 }
 
 body {
-  font-family: "RobotoRegular", sans-serif;
+  font-family: "OrkneyRegular", sans-serif;
   font-weight: normal;
   font-size: 14px;
   min-width: 320px;
@@ -43,8 +67,20 @@ body {
   display: none;
 }
 
+header {
+  background-image: -webkit-linear-gradient(top left, #fff 20%, transparent), -webkit-linear-gradient(top right, #298BE1, transparent), -webkit-linear-gradient(bottom, #000, transparent);
+  background-image: linear-gradient(top left, #fff 20%, transparent), linear-gradient(top right, #298BE1, transparent), linear-gradient(bottom, #000, transparent);
+}
+
 .bx-wrapper .bx-viewport {
   height: 100vh !important;
+}
+
+.bx-next {
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .logo {
@@ -54,7 +90,7 @@ body {
   z-index: 999;
 }
 .logo img {
-  max-width: 192px;
+  max-width: 164px;
 }
 
 .bx-wrapper .bx-prev {
@@ -62,24 +98,44 @@ body {
 }
 
 .bxslider li {
-  padding-top: 200px;
-  padding-left: 150px;
+  padding-top: 250px;
+  padding-left: 20px;
 }
 .bxslider span {
-  font-size: 18px;
   color: #29AAE1;
+  display: block;
+}
+.bxslider span img {
+  max-width: 100%;
+}
+.bxslider .f_line {
+  font-size: 72px;
+  font-family: "OrkneyLight", sans-serif;
+}
+.bxslider .s_line {
+  font-size: 36px;
 }
 .bxslider a {
   display: block;
   background-color: #29AAE1;
   color: #fff;
   text-decoration: none;
-  width: 150px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 40px;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 20px;
   text-align: center;
   text-transform: uppercase;
+  font-family: "OrkneyBold", sans-serif;
+  letter-spacing: 2px;
+  font-size: 18px;
+  border: 2px solid #29AAE2;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.bxslider a:hover {
+  background-color: #fff;
+  color: #29aae1;
 }
 
 #small-dialog {

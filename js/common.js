@@ -1,12 +1,16 @@
 $(function() {
 
-// function heightDetect() {
-// 		$("header").css("height", $(window).height());
-// 	};
+function heightDetect() {
+		$("header").css("height", $(window).height());
+	};
 
 	 $('.bxslider').bxSlider({
-	 	pager: false
+	 	pager: false,
+	 	easing: 'ease',
+	 	speed: 1800
 	 });
+
+$('.bx-next').addClass('animated shake');
 
 	 $('.popup-with-zoom-anim').magnificPopup({
         type: 'inline',
@@ -59,6 +63,6 @@ $(function() {
 $(window).load(function() {
 
 	$(".loader_inner").fadeOut();
-	$(".loader").delay(400).fadeOut("slow");
+	$(".loader").delay(600).fadeOut("slow");
 
 });

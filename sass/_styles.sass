@@ -6,7 +6,7 @@
 
 
 html.js .loader
-	background: none repeat scroll 0 0 #ffffff
+	background: none repeat scroll 0 0 #E3ECFD
 	bottom: 0
 	height: 100%
 	left: 0
@@ -20,17 +20,17 @@ html.js .loader
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center center
-		background-color: #fff
-		height: 60px
-		width: 60px
-		margin-top: -30px
-		margin-left: -30px
+		background-color: #E3ECFD
+		height: 400px
+		width: 300px
+		margin-top: -200px
+		margin-left: -150px
 		left: 50%
 		top: 50%
 		position: absolute
 
 body
-	font-family: "RobotoRegular", sans-serif
+	font-family: "OrkneyRegular", sans-serif
 	font-weight: normal
 	font-size: 14px
 	min-width: 320px
@@ -42,38 +42,57 @@ body
 
 .hidden
 	display: none
-
+header
+	background-image: linear-gradient(top left, #fff 20%, transparent), linear-gradient(top right, #298BE1, transparent), linear-gradient(bottom, #000, transparent)
 .bx-wrapper .bx-viewport
 	height: 100vh !important
 
+.bx-next
+	animation-duration: 7s
+	animation-iteration-count: infinite
 .logo
 	position: fixed
 	left: 0
 	top: 0
 	z-index: 999
 	img
-		max-width: 192px
+		max-width: 164px
 .bx-wrapper .bx-prev
 	display: none
 
 .bxslider
 	li
-		padding-top: 200px
-		padding-left: 150px
+		padding-top: 250px
+		padding-left: 20px
 	span
-		font-size: 18px
 		color: #29AAE1
+		display: block
+		img
+			max-width: 100%
+	.f_line
+		font-size: 72px
+		font-family: "OrkneyLight", sans-serif
+	.s_line
+		font-size: 36px
 	a
 		display: block
 		background-color: #29AAE1
 		color: #fff
 		text-decoration: none
-		width: 150px
-		height: 30px
-		line-height: 30px
-		border-radius: 40px
+		width: 300px
+		height: 50px
+		line-height: 50px
+		border-radius: 20px
 		text-align: center
 		text-transform: uppercase
+		font-family: "OrkneyBold", sans-serif
+		letter-spacing: 2px
+		font-size: 18px
+		border: 2px solid #29AAE2
+		+transition(.5s all)
+		&:hover
+			background-color: #fff
+			color: #29aae1
 
 #small-dialog
 	background: #eee
