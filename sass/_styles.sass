@@ -1,0 +1,85 @@
+@import "bourbon/bourbon"
+@import "../libs/bootstrap/bootstrap.min.css"
+@import "../libs/animate/animate.css"
+@import "../libs/bxSlider/jquery.bxslider.css"
+@import "../libs/magnific/magnific-popup.css"
+
+
+html.js .loader
+	background: none repeat scroll 0 0 #ffffff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/preloader.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+body
+	font-family: "RobotoRegular", sans-serif
+	font-weight: normal
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	-webkit-font-smoothing: antialiased
+	overflow-x: hidden
+
+
+.hidden
+	display: none
+
+.bx-wrapper .bx-viewport
+	height: 100vh !important
+
+.logo
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 999
+	img
+		max-width: 192px
+.bx-wrapper .bx-prev
+	display: none
+
+.bxslider
+	li
+		padding-top: 200px
+		padding-left: 150px
+	span
+		font-size: 18px
+		color: #29AAE1
+	a
+		display: block
+		background-color: #29AAE1
+		color: #fff
+		text-decoration: none
+		width: 150px
+		height: 30px
+		line-height: 30px
+		border-radius: 40px
+		text-align: center
+		text-transform: uppercase
+
+#small-dialog
+	background: #eee
+	padding: 20px 30px
+	text-align: left
+	max-width: 480px
+	margin: 40px auto
+	position: relative
+	border-radius: 40px
