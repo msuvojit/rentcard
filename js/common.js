@@ -5,7 +5,6 @@ function heightDetect() {
 	};
 
 	 $('.bxslider').bxSlider({
-	 	pager: false,
 	 	easing: 'ease',
 	 	speed: 1800
 	 });
