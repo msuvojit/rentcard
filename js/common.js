@@ -1,6 +1,7 @@
 $(function() {
 
-function heightDetect() {
+if (window.matchMedia("(min-width: 768px)").matches){
+	function heightDetect() {
 		$("header").css("height", $(window).height());
 	};
 
@@ -8,8 +9,10 @@ function heightDetect() {
 	 	easing: 'ease',
 	 	speed: 1800
 	 });
+	 $('.bx-next').addClass('animated shake');
+}
 
-$('.bx-next').addClass('animated shake');
+
 
 	 $('.popup-with-zoom-anim').magnificPopup({
         type: 'inline',
@@ -26,6 +29,8 @@ $('.bx-next').addClass('animated shake');
         removalDelay: 300,
         mainClass: 'my-mfp-zoom-in'
     });
+
+
 
 	//E-mail Ajax Send
 	//Documentation & Example: https://github.com/agragregra/uniMail
