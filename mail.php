@@ -1,52 +1,35 @@
-<?php
-
-$method = $_SERVER['REQUEST_METHOD'];
-
-//Script Foreach
-$c = true;
-if ( $method === 'POST' ) {
-
-	$project_name = trim($_POST["project_name"]);
-	$admin_email  = trim($_POST["admin_email"]);
-	$form_subject = trim($_POST["form_subject"]);
-
-	foreach ( $_POST as $key => $value ) {
-		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
-			$message .= "
-			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-			<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-			<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-		</tr>
-		";
-	}
+<? 
+ if((isset($_POST['name'])&&$_POST['name']!="")&&
+(isset($_POST['street'])&&$_POST['street']!="")&&
+(isset($_POST['town'])&&$_POST['town']!="")&&
+(isset($_POST['postcode'])&&$_POST['postcode']!="")&&
+(isset($_POST['email'])&&$_POST['email']!="")&&
+(isset($_POST['properties'])&&$_POST['properties']!="")){
+	
+	$to = 'derek@rentcard.co.uk'; //Почта получателя, через запятую можно указать сколько угодно адресов
+        $subject = 'New message from Rentcard'; //Загаловок сообщения
+        $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Name: '.$_POST['name'].'</p>
+                        <p>Street: '.$_POST['street'].'</p>   
+						<p>Town: '.$_POST['town'].'</p>
+                        <p>County: '.$_POST['county'].'</p>
+						<p>Postcode: '.$_POST['postcode'].'</p>
+                        <p>Country: '.$_POST['country'].'</p>
+						<p>Telephone: '.$_POST['telephone'].'</p>
+                        <p>Email: '.$_POST['email'].'</p>
+                        <p>Properties: '.$_POST['properties'].'</p>						
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
+        $headers .= "From: ".$_POST['email']."\r\n"; //Наименование и почта отправителя
+        mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
 }
-} else if ( $method === 'GET' ) {
+	 
 
-	$project_name = trim($_GET["project_name"]);
-	$admin_email  = trim($_GET["admin_email"]);
-	$form_subject = trim($_GET["form_subject"]);
 
-	foreach ( $_GET as $key => $value ) {
-		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
-			$message .= "
-			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-			<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-			<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-		</tr>
-		";
-	}
-}
-}
-
-$message = "<table style='width: 100%;'>$message</table>";
-
-function adopt($text) {
-	return '=?UTF-8?B?'.base64_encode($text).'?=';
-}
-
-$headers = "MIME-Version: 1.0" . PHP_EOL .
-"Content-Type: text/html; charset=utf-8" . PHP_EOL .
-'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
-'Reply-To: '.$admin_email.'' . PHP_EOL;
-
-mail($admin_email, adopt($form_subject), $message, $headers );
+?>
